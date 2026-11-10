@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Arctic — Predictors Map</title>
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div id="map"></div>
+<div id="tip" class="tip" hidden></div>
+
+<div id="boot" class="boot"><span data-i18n="boot.loading">Loading…</span></div>
+
+<div class="panel" id="panel">
+  <h1><span data-i18n="app.title">Арктика</span>
+      <small data-i18n="app.subtitle">полярная стереографическая, 90°–16.6° с.ш.</small></h1>
+
+  <!-- ─── ведущий предиктор: основная функциональность портала ─── -->
+  <div class="grp grp-main">
+    <h2 data-i18n="group.predictors">Карты предикторов</h2>
+    <p class="sub" id="predSetupNote">вариант 1</p>
+
+    <!-- Две карты в двух постановках. Каждая постановка -- своя подпись и
+         своя пара кнопок под ней: «сверх льда» отвечает, что предиктор даёт
+         сверх истории льда, «сверх льда и даты» -- что остаётся, когда
+         вычтен и сезонный ход, который модель знает и так. -->
+    <div id="predMode">
+      <p class="seg-cap" data-i18n="pred.cap.cal">сверх льда и даты</p>
+      <div class="seg">
+        <button data-mode="pixel" data-cal="1" class="on" data-i18n="pred.mode.pixel">по ячейкам</button>
+        <button data-mode="sets" data-cal="1" data-i18n="pred.mode.sets">набор</button>
+      </div>
+      <p class="seg-cap seg-cap-b" data-i18n="pred.cap.plain">сверх льда</p>
+      <div class="seg">
+        <button data-mode="pixel" data-cal="0" data-i18n="pred.mode.pixel">по ячейкам</button>
+        <button data-mode="sets" data-cal="0" data-i18n="pred.mode.sets">набор</button>
+      </div>
+    </div>
+
+    <div class="row lag" id="predDiscRow" hidden>
+      <span data-i18n="pred.disc">Шаг</span>
+      <span class="seg seg-sm" id="predDisc">
+        <button data-disc="monthly" data-i18n="pred.disc.monthly">месячный</button>
+        <button data-disc="daily" data-i18n="pred.disc.daily">суточный</button>
+      </span>
+    </div>
+
+    <div class="row lag" id="predSeasonRow" hidden>
+      <span><span data-i18n="pred.season">Сезон</span><span class="hint-q" data-tip="pred.season.hint"
+        data-tip-img="data/seasons_%s.png">?</span></span>
+      <select id="predSeason"></select>
+    </div>
+
+    <div class="row lag" id="predLagRow" hidden>
+      <span data-i18n="pred.lag">Горизонт</span>
+      <span><span class="seg seg-sm" id="predLag"></span><span class="lag-unit" id="predLagUnit"></span></span>
+    </div>
+
+    <div id="predK" class="krow" hidden>
+      <div class="row slide">
+        <span data-i18n="pred.k">Строгость</span>
+        <input type="range" id="predKRange" min="2" max="4" step="0.5" value="3">
+      </div>
+      <div class="kmarks"><span data-i18n="k.soft">мягкий</span><span
+        id="kValue"></span><span data-i18n="k.hard">строгий</span></div>
+      <p class="knote" data-i18n="k.note"></p>
+    </div>
+
+    <div class="row slide" id="predOpacityRow" hidden>
+      <span data-i18n="pred.opacity">Прозрачность</span>
+      <input type="range" id="predOpacity" min="20" max="100" value="92">
+    </div>
+
+    <div class="row lag" id="predScopeRow" hidden>
+      <span data-i18n="pred.scope">Статистика</span>
+      <select id="predScope"></select>
+    </div>
+
+    <div id="predPoly" class="poly" hidden>
+      <div class="poly-btns">
+        <button id="polyDraw" data-i18n="poly.draw">Нарисовать</button>
+        <button id="polyClear" data-i18n="poly.clear">Сбросить</button>
+        <button id="polyCoords" data-i18n="poly.coords">Координаты</button>
+      </div>
+      <textarea id="polyText" rows="4" spellcheck="false" hidden
+                data-i18n-placeholder="poly.placeholder"></textarea>
+      <p class="poly-hint" id="polyHint"></p>
+    </div>
+
+    <div id="predLegend" class="plegend" hidden></div>
+  </div>
+
+  <div class="grp">
+    <h2 data-i18n="group.base">Подложка</h2>
+    <label class="row"><input type="checkbox" data-layer="regions" checked><span data-i18n="layer.regions">Границы морей</span></label>
+    <label class="row"><input type="checkbox" data-layer="bathymetry" checked><span data-i18n="layer.bathymetry">Батиметрия</span></label>
+    <label class="row"><input type="checkbox" data-layer="water" checked><span data-i18n="layer.water">Реки и озёра</span></label>
+    <label class="row"><input type="checkbox" data-layer="borders" checked><span data-i18n="layer.borders">Границы стран</span></label>
+    <label class="row"><input type="checkbox" data-layer="graticule" checked><span data-i18n="layer.graticule">Градусная сетка</span></label>
+    <label class="row"><input type="checkbox" data-layer="gridDomain"><span data-i18n="layer.gridDomain">Контур сетки EASE2</span></label>
+  </div>
+
+  <div class="grp">
+    <h2 data-i18n="group.labels">Подписи</h2>
+    <label class="row"><input type="checkbox" data-labels="sea" checked><span data-i18n="labels.sea">Акватории</span></label>
+    <label class="row"><input type="checkbox" data-labels="city" checked><span data-i18n="labels.city">Города</span></label>
+  </div>
+
+  <p class="hint" data-i18n="hint.compass">Компас справа вверху — вращение вокруг полюса.</p>
+</div>
+
+<div class="readout" id="readout"></div>
+
+<script src="vendor/leaflet.js"></script>
+<script src="vendor/proj4.js"></script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

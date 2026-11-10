@@ -1,0 +1,770 @@
+/* Оформление оболочки. Цвета самой карты живут в src/palette.js --
+   здесь только интерфейс, и он намеренно тихий: панель не должна
+   перетягивать внимание с карты. */
+
+:root {
+  --paper: #e9e4d9;
+  --ink: #33302a;
+  --ink-soft: #6a6459;
+  --rule: rgba(90, 82, 68, 0.22);
+  --panel-bg: rgba(252, 250, 244, 0.93);
+  --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --sans: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  /* Мягкая виньетка «бумаги» вокруг круга карты. */
+  background-image: radial-gradient(circle at 50% 50%,
+    rgba(255, 255, 255, 0.55) 0%, rgba(210, 202, 186, 0.35) 78%);
+  outline: none;
+}
+
+.leaflet-container { background: transparent; font-family: var(--sans); }
+
+/* --- панель --- */
+.panel {
+  position: absolute;
+  z-index: 1000;
+  top: 14px;
+  left: 14px;
+  width: 232px;
+  padding: 14px 16px 12px;
+  background: var(--panel-bg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 6px 22px rgba(60, 50, 35, 0.14);
+  backdrop-filter: blur(3px);
+}
+
+.panel h1 {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.panel h1 small {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
+.grp {
+  padding: 9px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 12.5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.row input[type=checkbox] { accent-color: #7a6a53; margin: 0; }
+.row.lang, .row.slide { justify-content: space-between; cursor: default; }
+.row select { font: inherit; font-size: 11.5px; padding: 1px 4px; }
+.row input[type=range] { width: 108px; accent-color: #7a6a53; }
+
+}
+
+.hint {
+  margin: 10px 0 0;
+  padding-top: 9px;
+  border-top: 1px solid var(--rule);
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+kbd {
+  font-family: var(--sans);
+  font-size: 10px;
+  padding: 0 3px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: #fff;
+}
+
+/* Переключатель языка над компасом: тот же угол, та же рамка, что у
+   остальных контролов карты. */
+.lang-ctl {
+  width: 118px;
+  margin-bottom: 6px !important;
+  background: var(--panel-bg);
+  box-shadow: 0 6px 22px rgba(60, 50, 35, 0.14);
+}
+.lang-ctl button { padding: 3px 0; }
+
+/* Своя всплывающая подсказка вместо браузерной: та появляется через
+   секунду с лишним, рисунок в неё не вставить, а фон у неё системный. */
+.tip {
+  position: absolute;
+  z-index: 1200;
+  max-width: 470px;
+  padding: 8px 10px;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 8px 26px rgba(60, 50, 35, 0.22);
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink);
+  white-space: pre-line;
+  pointer-events: none;
+}
+.tip img {
+  display: block;
+  width: 450px;
+  max-width: 100%;
+  margin-top: 6px;
+}
+
+/* Значок подсказки: без него всплывающий текст о месяцах некуда навести --
+   над самим выпадающим списком его не ищут. */
+.hint-q {
+  display: inline-block;
+  margin-left: 4px;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  font-size: 9px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  color: var(--ink-soft);
+  cursor: help;
+}
+
+/* --- компас --- */
+.compass {
+  width: 118px;
+  padding: 8px 6px 8px;
+  text-align: center;
+  background: var(--panel-bg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 6px 22px rgba(60, 50, 35, 0.14);
+}
+
+.cp-dial { cursor: grab; touch-action: none; }
+.cp-dial.cp-dragging { cursor: grabbing; }
+.cp-dial svg { display: block; margin: 0 auto; }
+
+.cp-face { fill: rgba(255, 253, 247, 0.9); stroke: rgba(90, 82, 68, 0.35); stroke-width: 1; }
+.cp-tick { stroke: rgba(90, 100, 110, 0.55); stroke-width: 1; }
+.cp-tick.cp-major { stroke: rgba(60, 72, 84, 0.85); stroke-width: 1.4; }
+.cp-lab {
+  font-family: var(--serif);
+  font-size: 8.5px;
+  fill: #4a5560;
+  text-anchor: middle;
+}
+.cp-up { fill: #9c5238; }
+.cp-hub { fill: #6a6459; }
+
+.cp-read { margin-top: 2px; font-family: var(--serif); line-height: 1.1; }
+.cp-val { display: block; font-size: 14px; color: #33302a; }
+.cp-cap { display: block; font-family: var(--sans); font-size: 9.5px; color: var(--ink-soft); letter-spacing: 0.06em; }
+
+.cp-presets { display: flex; gap: 3px; margin-top: 6px; }
+.cp-presets button {
+  flex: 1;
+  font: inherit;
+  font-size: 9.5px;
+  padding: 2px 0;
+  color: var(--ink-soft);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.cp-presets button:hover { background: #f3efe4; color: var(--ink); }
+
+/* --- подписи на карте --- */
+.arctic-labels { position: absolute; left: 0; top: 0; }
+
+.lb {
+  position: absolute;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  text-shadow:
+     0 0 3px rgba(252, 250, 244, 0.95), 0 0 3px rgba(252, 250, 244, 0.95),
+     1px 0 2px rgba(252, 250, 244, 0.9), -1px 0 2px rgba(252, 250, 244, 0.9);
+  pointer-events: none;
+}
+.lb-anchor-left { transform: translate(7px, -50%); }
+
+.lb-pole {
+  font-family: var(--serif); font-size: 11px; letter-spacing: 0.22em;
+  color: #4a5560;
+}
+.lb-region {
+  font-family: var(--serif); font-size: 12px; letter-spacing: 0.2em;
+  color: #7a6a53;
+}
+.lb-island {
+  font-family: var(--serif); font-size: 10px; letter-spacing: 0.14em;
+  color: #86765d;
+}
+.lb-sea {
+  font-family: var(--serif); font-style: italic; font-size: 12.5px;
+  letter-spacing: 0.04em; color: #3f6d92;
+}
+.lb-basin {
+  font-family: var(--serif); font-style: italic; font-size: 10.5px;
+  color: #5b86a6;
+}
+.lb-relief {
+  font-family: var(--serif); font-style: italic; font-size: 10px;
+  letter-spacing: 0.05em; color: #5b86a6;
+}
+.lb-grat {
+  font-family: var(--sans); font-size: 9.5px; color: #6c7d89;
+  letter-spacing: 0.03em;
+}
+.lb-city { font-family: var(--sans); font-size: 10.5px; color: #2f2b26; }
+
+.lb-dot {
+  position: absolute;
+  width: 4px; height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: #4a433a;
+  box-shadow: 0 0 0 1.5px rgba(252, 250, 244, 0.85);
+}
+
+.arctic-field { position: absolute; left: 0; top: 0; pointer-events: none; }
+
+/* --- вспомогательное --- */
+.readout {
+  position: absolute;
+  z-index: 1000;
+  left: 14px;
+  bottom: 12px;
+  padding: 4px 9px;
+  font-family: var(--serif);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  background: var(--panel-bg);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  min-height: 21px;
+}
+
+.readout:empty { display: none; }
+
+.boot {
+  position: absolute;
+  z-index: 1200;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  background: var(--paper);
+  transition: opacity 0.4s;
+}
+.boot.done { opacity: 0; pointer-events: none; }
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(252, 250, 244, 0.82);
+  color: var(--ink-soft);
+}
+.leaflet-control-attribution a { color: #6b5e4a; }
+
+@media (max-width: 700px) {
+  .panel { width: 200px; padding: 10px 12px; }
+  .panel h1 { font-size: 16px; }
+}
+
+/* --- добавления: заголовки групп, сегментные переключатели, легенда --- */
+
+.panel {
+  max-height: calc(100vh - 28px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.grp h2 {
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Группа с основной функциональностью выделена тоном бумаги, а не рамкой:
+   рамка добавила бы третий уровень линий на и без того плотной панели. */
+.grp-main {
+  margin: 0 -16px;
+  padding: 10px 16px 12px;
+  background: rgba(233, 228, 217, 0.55);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.grp-main h2 { color: var(--ink); }
+
+.sub {
+  margin: -3px 0 8px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.seg {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fff;
+}
+.seg button {
+  flex: 1;
+  font: inherit;
+  font-size: 11px;
+  padding: 3px 4px;
+  color: var(--ink-soft);
+  background: #fff;
+  border: 0;
+  border-left: 1px solid var(--rule);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.seg button:first-child { border-left: 0; }
+.seg button:hover { background: #f3efe4; }
+.seg button.on { background: #6b5e4a; color: #fdfbf5; }
+.seg-sm button { font-size: 10.5px; padding: 2px 6px; }
+.row .seg { flex: 0 0 auto; }
+
+.row.lag { justify-content: space-between; cursor: default; gap: 10px; }
+
+.plegend { margin-top: 9px; }
+.plegend .pl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1.5px 0;
+  font-size: 11px;
+  line-height: 1.25;
+}
+.plegend .sw {
+  flex: 0 0 auto;
+  width: 13px;
+  height: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 1px;
+}
+.plegend .pl-var {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 10px;
+  color: var(--ink);
+}
+.plegend .pl-note { color: var(--ink-soft); }
+.plegend .pl-loading { font-size: 11px; color: var(--ink-soft); }
+
+/* Подсказка под курсором: две строки, вторая мельче и тише. */
+.readout b { font-weight: 600; }
+.readout .ro-sub {
+  display: block;
+  margin-top: 1px;
+  font-size: 10.5px;
+  color: #8a8377;
+}
+.readout .ro-sw {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+  vertical-align: baseline;
+}
+
+/* Атрибут hidden против display у классов: правило автора бьёт правило
+   браузера, поэтому .row{display:flex} показывал бы скрытые строки. */
+[hidden] { display: none !important; }
+
+/* --- постановка: шаг, сезон, единица горизонта --- */
+.lag-unit {
+  margin-left: 5px;
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+
+.row.lag select {
+  font: inherit;
+  font-size: 11px;
+  padding: 1px 3px;
+  max-width: 128px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+
+.seg button[disabled] {
+  color: #b6afa2;
+  background: #f6f3ec;
+  cursor: not-allowed;
+}
+.seg button[disabled]:hover { background: #f6f3ec; }
+
+/* Оговорка про то, чего в данных нет: тише легенды, но не прячется. */
+.pnote {
+  margin: 7px 0 0;
+  padding-left: 9px;
+  border-left: 2px solid rgba(156, 82, 56, 0.55);
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+/* --- справочник предикторов --- */
+.cat-btn button {
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  padding: 5px 10px;
+  color: var(--ink);
+  background: var(--panel-bg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 6px 22px rgba(60, 50, 35, 0.14);
+  cursor: pointer;
+}
+.cat-btn button:hover { background: #f3efe4; }
+.cat-btn button.on { background: #6b5e4a; color: #fdfbf5; border-color: #6b5e4a; }
+
+.catalog {
+  position: fixed;
+  z-index: 1100;
+  top: 14px;
+  right: 14px;
+  bottom: 14px;
+  width: 384px;
+  max-width: calc(100vw - 28px);
+  overflow-y: auto;
+  padding: 0 18px 18px;
+  background: var(--panel-bg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 10px 40px rgba(60, 50, 35, 0.2);
+  backdrop-filter: blur(3px);
+  scrollbar-width: thin;
+}
+
+.cat-top {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 0 8px;
+  background: linear-gradient(var(--panel-bg) 78%, rgba(252, 250, 244, 0));
+}
+.cat-top h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.cat-close {
+  font: inherit;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 4px;
+  color: var(--ink-soft);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.cat-close:hover { color: var(--ink); }
+
+.cat-sub, .cat-foot {
+  margin: 0 0 12px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.cat-foot {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+.cat-src { margin: 16px 0 8px; }
+.cat-src h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.cat-src h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.cat-src h3 a:hover { color: #6b5e4a; }
+.cat-srcmeta {
+  margin: 2px 0 0;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.cat-v {
+  padding: 5px 0;
+  border-top: 1px solid rgba(90, 82, 68, 0.12);
+}
+.cat-v.has-note .cat-head { cursor: pointer; }
+/* Точка — единственный признак, что строка раскрывается. */
+.cat-v.has-note .cat-head::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(156, 82, 56, 0.75);
+}
+
+.cat-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.cat-sw {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 1px;
+  transform: translateY(1px);
+}
+.cat-head code {
+  flex: 0 0 auto;
+  min-width: 52px;
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 11px;
+  color: var(--ink);
+}
+.cat-t { flex: 1 1 auto; font-size: 12px; line-height: 1.3; }
+.cat-badges { flex: 0 0 auto; display: flex; gap: 3px; }
+.cat-b {
+  font-size: 9px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  padding: 1px 4px;
+  color: var(--ink-soft);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+.cat-meta {
+  margin: 1px 0 0 67px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+.cat-g { font-family: ui-monospace, Consolas, monospace; font-size: 10px; }
+
+.cat-note {
+  display: none;
+  margin: 5px 0 3px 67px;
+  padding-left: 9px;
+  border-left: 2px solid rgba(156, 82, 56, 0.45);
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.cat-v.open .cat-note { display: block; }
+
+@media (max-width: 760px) {
+  .catalog { width: auto; left: 14px; }
+}
+
+/* --- выбор области для статистики --- */
+.poly { margin-top: 7px; }
+
+.poly-btns { display: flex; gap: 4px; }
+.poly-btns button {
+  flex: 1;
+  font: inherit;
+  font-size: 10.5px;
+  padding: 3px 0;
+  color: var(--ink-soft);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.poly-btns button:hover { background: #f3efe4; color: var(--ink); }
+.poly-btns button.on { background: #7c1a2e; color: #fdfbf5; border-color: #7c1a2e; }
+
+.poly textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 4px 5px;
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  resize: vertical;
+}
+
+.poly-hint {
+  margin: 4px 0 0;
+  font-size: 10px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+/* Заголовок легенды: область и число ячеек. Без него проценты по полигону
+   неотличимы от процентов по всему охвату. */
+.pl-scope {
+  margin-bottom: 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+
+/* --- карта неизбыточных наборов --- */
+.krow { margin-top: 2px; }
+.kmarks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -2px;
+  font-size: 10px;
+  color: var(--ink-soft);
+}
+.kmarks span:nth-child(2) { color: var(--ink); font-weight: 600; }
+.knote {
+  margin: 5px 0 0;
+  font-size: 10px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.pl-key {
+  margin-top: 5px;
+  padding-top: 4px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 0;
+  color: var(--ink);
+}
+
+/* Рекомендованный набор каналов: вывод для того, кто будет обучать модель,
+   поэтому отделён чертой и не смешивается со строками легенды. */
+.pl-rec {
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid rgba(90, 84, 74, 0.2);
+}
+.pl-rec b {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Подсказка карты наборов: таблица шагов моноширинным. */
+.ro-sets { line-height: 1.5; }
+.ro-step {
+  display: block;
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 10.5px;
+  white-space: pre;
+  color: var(--ink);
+}
+.ro-step.ro-cut { color: #9c5238; }
+/* «Лёд сам» -- не предиктор, а то, что известно и без них: отделяем чертой,
+   иначе строка читается как нулевой шаг отбора. */
+.ro-step.ro-ice {
+  color: var(--ink-soft);
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid rgba(90, 84, 74, 0.25);
+}
+.ro-rest { display: block; margin-top: 2px; font-size: 10px; }
+
+/* Четыре режима в 232 пикселя не помещаются одной строкой -- разрешаем
+   перенос, сохраняя вид сегментного переключателя. */
+/* Подписи к постановкам: сами по себе «по ячейкам» и «набор» в двух
+   экземплярах неразличимы, и без подписей выбор превращается в угадывание.
+   Каждая подпись стоит НАД своей парой кнопок -- так пара читается как одно
+   целое, а не как четыре независимые кнопки в сетке. */
+.seg-cap {
+  margin: 0 0 2px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.seg-cap-b { margin-top: 7px; }
+
+/* Состав наборов под строкой легенды: какие именно предикторы стоят за
+   числом «нужно два». Моноширинный, чтобы имена читались как имена. */
+.pl-mix {
+  margin: 1px 0 4px 19px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.pl-mix span { display: block; }
+.pl-mix b {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+/* Остаток в разборе составов: он закрывает арифметику группы, но сам по
+   себе не ответ, поэтому тише остальных строк. */
+.pl-mix .mix-rest { color: #9a948a; font-style: italic; }
+
+/* Сообщение о сбое слоя: заметное, но не кричащее, с текстом ошибки. */
+.pl-error {
+  padding: 7px 9px;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: #7c3a24;
+  background: rgba(196, 106, 74, 0.1);
+  border-left: 2px solid rgba(156, 82, 56, 0.7);
+}
+.pl-error code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 10px;
+  color: #5d5140;
+}

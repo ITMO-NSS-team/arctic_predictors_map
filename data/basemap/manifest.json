@@ -1,0 +1,28 @@
+{
+ "min_lat": 16.6,
+ "bathymetry": [
+  200,
+  1000,
+  2000,
+  3000,
+  4000,
+  5000
+ ],
+ "layers": [
+  "bathy_1000",
+  "bathy_200",
+  "bathy_2000",
+  "bathy_3000",
+  "bathy_4000",
+  "bathy_5000",
+  "borders",
+  "glacier",
+  "labels",
+  "lakes",
+  "land",
+  "manifest",
+  "regions",
+  "relief",
+  "rivers"
+ ]
+}

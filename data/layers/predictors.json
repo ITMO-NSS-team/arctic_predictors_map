@@ -1,0 +1,3301 @@
+{
+ "variant": 1,
+ "grid": {
+  "size": 432,
+  "halfExtent": 5387500.0
+ },
+ "groups": [
+  {
+   "key": "t2m/2d/t500",
+   "color": "#4a3aa7",
+   "area": 7891
+  },
+  {
+   "key": "sp/msl",
+   "color": "#8a8985",
+   "area": 76
+  },
+  {
+   "key": "u10/v10/wspd",
+   "color": "#8a8985",
+   "area": 373
+  },
+  {
+   "key": "strd/ssrd/tcc",
+   "color": "#1baf7a",
+   "area": 15327
+  },
+  {
+   "key": "tp/sf",
+   "color": "#008300",
+   "area": 7746
+  },
+  {
+   "key": "sshf/slhf",
+   "color": "#8a8985",
+   "area": 6219
+  },
+  {
+   "key": "z500/z250",
+   "color": "#8a8985",
+   "area": 375
+  },
+  {
+   "key": "ohc300/ohc700",
+   "color": "#8a8985",
+   "area": 3268
+  },
+  {
+   "key": "mld001/mld003",
+   "color": "#e87ba4",
+   "area": 13118
+  },
+  {
+   "key": "sit",
+   "color": "#eda100",
+   "area": 15220
+  },
+  {
+   "key": "sst",
+   "color": "#eb6834",
+   "area": 17173
+  },
+  {
+   "key": "u10hpa",
+   "color": "#2a78d6",
+   "area": 18561
+  }
+ ],
+ "colorInsignificant": "#e4e1d9",
+ "catInsignificant": 254,
+ "catNodata": 255,
+ "catOutside": 253,
+ "catNoEstimate": 252,
+ "pSignificant": 0.001,
+ "planes": [
+  "cat",
+  "u1",
+  "gap"
+ ],
+ "regions": [
+  {
+   "key": "arctic_other",
+   "ru": "Арктические воды без моря по IHO",
+   "en": "Other Arctic waters"
+  },
+  {
+   "key": "baffin",
+   "ru": "Море Баффина",
+   "en": "Baffin Bay"
+  },
+  {
+   "key": "barents",
+   "ru": "Баренцево море",
+   "en": "Barents Sea"
+  },
+  {
+   "key": "beaufort",
+   "ru": "Море Бофорта",
+   "en": "Beaufort Sea"
+  },
+  {
+   "key": "bering",
+   "ru": "Берингово море",
+   "en": "Bering Sea"
+  },
+  {
+   "key": "central_arctic",
+   "ru": "Центральная Арктика",
+   "en": "Central Arctic"
+  },
+  {
+   "key": "chukchi",
+   "ru": "Чукотское море",
+   "en": "Chukchi Sea"
+  },
+  {
+   "key": "east_siberian",
+   "ru": "Восточно-Сибирское море",
+   "en": "East Siberian Sea"
+  },
+  {
+   "key": "greenland",
+   "ru": "Гренландское море",
+   "en": "Greenland Sea"
+  },
+  {
+   "key": "kara",
+   "ru": "Карское море",
+   "en": "Kara Sea"
+  },
+  {
+   "key": "laptev",
+   "ru": "Море Лаптевых",
+   "en": "Laptev Sea"
+  },
+  {
+   "key": "norwegian",
+   "ru": "Норвежское море",
+   "en": "Norwegian Sea"
+  },
+  {
+   "key": "okhotsk",
+   "ru": "Охотское море",
+   "en": "Sea of Okhotsk"
+  }
+ ],
+ "setups": [
+  {
+   "key": "monthly_all",
+   "base": "monthly_all",
+   "cal": false,
+   "disc": "monthly",
+   "season": "all",
+   "lags": [
+    1,
+    2,
+    3,
+    6,
+    12
+   ],
+   "lagsRegion": [
+    1,
+    2,
+    3,
+    6,
+    12
+   ],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "month",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.0013203883872312657,
+     "gapScale": 0.0009904902355343688,
+     "gapP10": 0.002679380774497986,
+     "gapP90": 0.06353362649679185,
+     "significant": 0.9796137766275135,
+     "distinct": null
+    },
+    "2": {
+     "u1Scale": 0.0012474285621269076,
+     "gapScale": 0.0007672517323026471,
+     "gapP10": 0.0019435711205005647,
+     "gapP90": 0.04206197559833527,
+     "significant": 0.8957595062711528,
+     "distinct": null
+    },
+    "3": {
+     "u1Scale": 0.001226115343617458,
+     "gapScale": 0.0007950466637517892,
+     "gapP10": 0.0017537742853164673,
+     "gapP90": 0.03844651728868485,
+     "significant": 0.7746764881544893,
+     "distinct": null
+    },
+    "6": {
+     "u1Scale": 0.0012162915631836536,
+     "gapScale": 0.0007307215648538926,
+     "gapP10": 0.0019943341612815857,
+     "gapP90": 0.05314373522996914,
+     "significant": 0.7984471431415489,
+     "distinct": null
+    },
+    "12": {
+     "u1Scale": 0.001211912141126745,
+     "gapScale": 0.001219468257006477,
+     "gapP10": 0.0019082590937614442,
+     "gapP90": 0.06369684934616097,
+     "significant": 0.7460879952219789,
+     "distinct": null
+    }
+   },
+   "regionLeader": {
+    "1": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3729,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4164,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.3544,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.783,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.1134,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 7,
+      "name": "ohc300/ohc700",
+      "sig": true,
+      "share": 0.3631,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3361,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.1508,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.2671,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4063,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.5,
+      "cells": 26
+     }
+    },
+    "2": {
+     "arctic_other": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.1873,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.3654,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.3342,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.2686,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.2853,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4233,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.0292,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.1041,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.2602,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.0446,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.4615,
+      "cells": 26
+     }
+    },
+    "3": {
+     "arctic_other": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.3022,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": false,
+      "share": 0.0759,
+      "cells": 843
+     },
+     "barents": {
+      "g": 7,
+      "name": "ohc300/ohc700",
+      "sig": true,
+      "share": 0.1001,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.1882,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": false,
+      "share": 0.0526,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3612,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.1795,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.1049,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.2929,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.1874,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 8,
+      "name": "mld001/mld003",
+      "sig": true,
+      "share": 0.0769,
+      "cells": 26
+     }
+    },
+    "6": {
+     "arctic_other": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.5089,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 7,
+      "name": "ohc300/ohc700",
+      "sig": false,
+      "share": 0.0474,
+      "cells": 843
+     },
+     "barents": {
+      "g": 7,
+      "name": "ohc300/ohc700",
+      "sig": true,
+      "share": 0.0577,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.4522,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.2753,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.2913,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.4593,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": false,
+      "share": 0.072,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.0835,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.3932,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0769,
+      "cells": 26
+     }
+    },
+    "12": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4478,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": false,
+      "share": 0.0996,
+      "cells": 843
+     },
+     "barents": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.5829,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": false,
+      "share": 0.434,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.2329,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.0641,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.4342,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.3185,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.5015,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 8,
+      "name": "mld001/mld003",
+      "sig": true,
+      "share": 0.3775,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.7308,
+      "cells": 26
+     }
+    }
+   }
+  },
+  {
+   "key": "daily_all",
+   "base": "daily_all",
+   "cal": false,
+   "disc": "daily",
+   "season": "all",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "pixel": false,
+   "pixelSignificance": false,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {},
+   "regionLeader": {
+    "1": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": null,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": null,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": null,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": null,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": null,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": null,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": null,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": null,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": null,
+      "cells": 26
+     }
+    },
+    "7": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 843
+     },
+     "barents": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": null,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": null,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": null,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": null,
+      "cells": 26
+     }
+    },
+    "14": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 843
+     },
+     "barents": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": null,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": null,
+      "cells": 26
+     }
+    },
+    "30": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 843
+     },
+     "barents": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": null,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": null,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": false,
+      "share": null,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": null,
+      "cells": 26
+     }
+    },
+    "60": {
+     "arctic_other": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 843
+     },
+     "barents": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": null,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": false,
+      "share": null,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": null,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": null,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": null,
+      "cells": 26
+     }
+    }
+   }
+  },
+  {
+   "key": "daily_freeze_up",
+   "base": "daily_freeze_up",
+   "cal": false,
+   "disc": "daily",
+   "season": "freeze_up",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.0028413852055867513,
+     "gapScale": 0.0025264718953300924,
+     "gapP10": 0.002584487199783325,
+     "gapP90": 0.10979760289192207,
+     "significant": 0.9943779323734023,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.005735009791804295,
+     "gapScale": 0.004623141008264878,
+     "gapP10": 0.005040226504206658,
+     "gapP90": 0.22236719727516174,
+     "significant": 0.9430223624085082,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.0061740491904464425,
+     "gapScale": 0.005013673445757698,
+     "gapP10": 0.006257779151201248,
+     "gapP90": 0.28181051015853903,
+     "significant": 0.9493660696317167,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.006116608544891956,
+     "gapScale": 0.0045881813647700295,
+     "gapP10": 0.007409544289112091,
+     "gapP90": 0.30495361089706424,
+     "significant": 0.9404162808486654,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.006414032917396695,
+     "gapScale": 0.0055291633979946955,
+     "gapP10": 0.0035250659100711347,
+     "gapP90": 0.5734409213066107,
+     "significant": 0.9084747122287731,
+     "distinct": null
+    }
+   },
+   "regionLeader": {
+    "1": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.6475,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0225,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.2746,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.1654,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0115,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.0913,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.8361,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.1225,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.1798,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.5491,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    },
+    "7": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.732,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.3594,
+      "cells": 843
+     },
+     "barents": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.0,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9439,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3601,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.4971,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9603,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0184,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.6798,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.8873,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    },
+    "14": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.6618,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.2859,
+      "cells": 843
+     },
+     "barents": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.5055,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9408,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3173,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.3631,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9593,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": false,
+      "share": 0.0337,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.698,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9371,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    },
+    "30": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4621,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.242,
+      "cells": 843
+     },
+     "barents": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.1603,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.8741,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.1422,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.8816,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9656,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.2825,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.5379,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.941,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    },
+    "60": {
+     "arctic_other": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.4054,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.0107,
+      "cells": 843
+     },
+     "barents": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.0559,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.6024,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": false,
+      "share": 0.4772,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.8485,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.5522,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.062,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3141,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3696,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    }
+   },
+   "varNames": [
+    "2d",
+    "msl",
+    "sf",
+    "sit",
+    "slhf",
+    "sp",
+    "sshf",
+    "ssrd",
+    "sst",
+    "strd",
+    "t2m",
+    "t500",
+    "tcc",
+    "tp",
+    "u10",
+    "u10hpa",
+    "v10",
+    "wspd",
+    "z250",
+    "z500"
+   ]
+  },
+  {
+   "key": "daily_winter",
+   "base": "daily_winter",
+   "cal": false,
+   "disc": "daily",
+   "season": "winter",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.0013750875697416418,
+     "gapScale": 0.0012362166947009518,
+     "gapP10": 0.002622078359127045,
+     "gapP90": 0.09204806685447699,
+     "significant": 0.9929007298687832,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.003155940420487348,
+     "gapScale": 0.0025837393367991726,
+     "gapP10": 0.002477737609297037,
+     "gapP90": 0.20493396222591403,
+     "significant": 0.8788253600925667,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.004727036812726189,
+     "gapScale": 0.0033362849085938695,
+     "gapP10": 0.0030175975523889067,
+     "gapP90": 0.2528581500053406,
+     "significant": 0.8631507613808499,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.006403718275182387,
+     "gapScale": 0.005560827255249023,
+     "gapP10": 0.0028232317417860035,
+     "gapP90": 0.27976209521293666,
+     "significant": 0.8332536647546208,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.006936505729076909,
+     "gapScale": 0.0059833872552011525,
+     "gapP10": 0.002640736848115921,
+     "gapP90": 0.225769239664078,
+     "significant": 0.8442567432965457,
+     "distinct": null
+    }
+   },
+   "regionLeader": {
+    "1": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.6676,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.2871,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.2985,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.1866,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0184,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0272,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.1524,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0467,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.3748,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.2372,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.1923,
+      "cells": 26
+     }
+    },
+    "7": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.8254,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.102,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.07,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9681,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3571,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9049,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9593,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.0521,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9135,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9463,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.8846,
+      "cells": 26
+     }
+    },
+    "14": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.8319,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.1139,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": false,
+      "share": 0.0215,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9666,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3542,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9262,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9582,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": false,
+      "share": 0.0398,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.893,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9489,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.8462,
+      "cells": 26
+     }
+    },
+    "30": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.7984,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.8256,
+      "cells": 843
+     },
+     "barents": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.2451,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9347,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0508,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9262,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.0365,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 6,
+      "name": "z500/z250",
+      "sig": false,
+      "share": 0.0337,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.868,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.9305,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.8846,
+      "cells": 26
+     }
+    },
+    "60": {
+     "arctic_other": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.6602,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.7082,
+      "cells": 843
+     },
+     "barents": {
+      "g": 6,
+      "name": "z500/z250",
+      "sig": false,
+      "share": 0.0,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.0789,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": false,
+      "share": 0.5441,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.6505,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.1305,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 1,
+      "name": "sp/msl",
+      "sig": false,
+      "share": 0.0077,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4294,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.3486,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.5,
+      "cells": 26
+     }
+    }
+   },
+   "varNames": [
+    "2d",
+    "msl",
+    "sf",
+    "sit",
+    "slhf",
+    "sp",
+    "sshf",
+    "ssrd",
+    "sst",
+    "strd",
+    "t2m",
+    "t500",
+    "tcc",
+    "tp",
+    "u10",
+    "u10hpa",
+    "v10",
+    "wspd",
+    "z250",
+    "z500"
+   ]
+  },
+  {
+   "key": "daily_melt_onset",
+   "base": "daily_melt_onset",
+   "cal": false,
+   "disc": "daily",
+   "season": "melt_onset",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.002535051925509584,
+     "gapScale": 0.002437113079370237,
+     "gapP10": 0.0012877251952886583,
+     "gapP90": 0.09025831520557408,
+     "significant": 0.9876669671392281,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.004464573018691119,
+     "gapScale": 0.004464573018691119,
+     "gapP10": 0.0017468936741352082,
+     "gapP90": 0.11438876986503609,
+     "significant": 0.97100927703135,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.005586822360169654,
+     "gapScale": 0.005555560074600519,
+     "gapP10": 0.002020015195012093,
+     "gapP90": 0.11191194057464604,
+     "significant": 0.959100693613968,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.005857629869498459,
+     "gapScale": 0.005632663240619735,
+     "gapP10": 0.0024820670485496523,
+     "gapP90": 0.09738874435424809,
+     "significant": 0.9439244892269704,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.0037210780031540817,
+     "gapScale": 0.0029264146206425686,
+     "gapP10": 0.005156183987855912,
+     "gapP90": 0.11307854652404792,
+     "significant": 0.9321865169434158,
+     "distinct": null
+    }
+   },
+   "regionLeader": {
+    "1": {
+     "arctic_other": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.2047,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.4864,
+      "cells": 843
+     },
+     "barents": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.1572,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.4992,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.2615,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.1068,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.3873,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.0452,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0774,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.5203,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.6923,
+      "cells": 26
+     }
+    },
+    "7": {
+     "arctic_other": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.1871,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.1732,
+      "cells": 843
+     },
+     "barents": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.0442,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.0561,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.2197,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0019,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4624,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.0735,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0653,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.3565,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.9615,
+      "cells": 26
+     }
+    },
+    "14": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3795,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0332,
+      "cells": 843
+     },
+     "barents": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": false,
+      "share": 0.0025,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.0273,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.1978,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.4718,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.3528,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0467,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.28,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.4443,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.9615,
+      "cells": 26
+     }
+    },
+    "30": {
+     "arctic_other": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.4764,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.5042,
+      "cells": 843
+     },
+     "barents": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": false,
+      "share": 0.3084,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.6631,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0109,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.2252,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.1367,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": false,
+      "share": 0.0253,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.2929,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.156,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.6923,
+      "cells": 26
+     }
+    },
+    "60": {
+     "arctic_other": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": true,
+      "share": 0.7998,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.0356,
+      "cells": 843
+     },
+     "barents": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": false,
+      "share": 0.0012,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.0212,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0073,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.0136,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.0689,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0283,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.091,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.038,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 3,
+      "name": "strd/ssrd/tcc",
+      "sig": false,
+      "share": 0.7692,
+      "cells": 26
+     }
+    }
+   },
+   "varNames": [
+    "2d",
+    "msl",
+    "sf",
+    "sit",
+    "slhf",
+    "sp",
+    "sshf",
+    "ssrd",
+    "sst",
+    "strd",
+    "t2m",
+    "t500",
+    "tcc",
+    "tp",
+    "u10",
+    "u10hpa",
+    "v10",
+    "wspd",
+    "z250",
+    "z500"
+   ]
+  },
+  {
+   "key": "daily_melt",
+   "base": "daily_melt",
+   "cal": false,
+   "disc": "daily",
+   "season": "melt",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.005621228966058469,
+     "gapScale": 0.005267806146659103,
+     "gapP10": 0.00155835896730423,
+     "gapP90": 0.1356299191713334,
+     "significant": 0.9765352407536636,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.007134607258964988,
+     "gapScale": 0.007062966683331658,
+     "gapP10": 0.0014741538325324655,
+     "gapP90": 0.29565289020538355,
+     "significant": 0.8427906976744186,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.0079958018134622,
+     "gapScale": 0.007782176429150151,
+     "gapP10": 0.0017326563596725465,
+     "gapP90": 0.3506649374961855,
+     "significant": 0.824623927727819,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.016468334197998046,
+     "gapScale": 0.012671381819481943,
+     "gapP10": 0.0020212173461914063,
+     "gapP90": 0.41273453235626245,
+     "significant": 0.8230762893392651,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.013793393677356196,
+     "gapScale": 0.01354041380040786,
+     "gapP10": 0.0021140515804290772,
+     "gapP90": 0.19242162406444552,
+     "significant": 0.7948811256671519,
+     "distinct": null
+    }
+   },
+   "regionLeader": {
+    "1": {
+     "arctic_other": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.3028,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.3547,
+      "cells": 843
+     },
+     "barents": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.0252,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.22,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.3724,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.3592,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.1065,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0237,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0486,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": true,
+      "share": 0.0066,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    },
+    "7": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4715,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.3701,
+      "cells": 843
+     },
+     "barents": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.277,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.0895,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.2258,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.5631,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.4415,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.049,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.3945,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.5007,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    },
+    "14": {
+     "arctic_other": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.4653,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.3606,
+      "cells": 843
+     },
+     "barents": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.0018,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.5994,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 10,
+      "name": "sst",
+      "sig": false,
+      "share": 0.241,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.6311,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.4113,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": true,
+      "share": 0.026,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.2716,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.4967,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.0,
+      "cells": 26
+     }
+    },
+    "30": {
+     "arctic_other": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.2809,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.3025,
+      "cells": 843
+     },
+     "barents": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.0012,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": false,
+      "share": 0.0486,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.2964,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.668,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 2,
+      "name": "u10/v10/wspd",
+      "sig": false,
+      "share": 0.0,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 5,
+      "name": "sshf/slhf",
+      "sig": false,
+      "share": 0.0168,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.6039,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.1481,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 4,
+      "name": "tp/sf",
+      "sig": true,
+      "share": 0.1154,
+      "cells": 26
+     }
+    },
+    "60": {
+     "arctic_other": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.3545,
+      "cells": 4891
+     },
+     "baffin": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.0332,
+      "cells": 843
+     },
+     "barents": {
+      "g": 11,
+      "name": "u10hpa",
+      "sig": true,
+      "share": 0.0491,
+      "cells": 1628
+     },
+     "beaufort": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.1457,
+      "cells": 659
+     },
+     "central_arctic": {
+      "g": 0,
+      "name": "t2m/2d/t500",
+      "sig": true,
+      "share": 0.3718,
+      "cells": 5212
+     },
+     "chukchi": {
+      "g": 10,
+      "name": "sst",
+      "sig": true,
+      "share": 0.7553,
+      "cells": 515
+     },
+     "east_siberian": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.0042,
+      "cells": 958
+     },
+     "greenland": {
+      "g": 1,
+      "name": "sp/msl",
+      "sig": true,
+      "share": 0.0038,
+      "cells": 1306
+     },
+     "kara": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.0948,
+      "cells": 1318
+     },
+     "laptev": {
+      "g": 9,
+      "name": "sit",
+      "sig": false,
+      "share": 0.0262,
+      "cells": 763
+     },
+     "norwegian": {
+      "g": 9,
+      "name": "sit",
+      "sig": true,
+      "share": 0.7308,
+      "cells": 26
+     }
+    }
+   },
+   "varNames": [
+    "2d",
+    "msl",
+    "sf",
+    "sit",
+    "slhf",
+    "sp",
+    "sshf",
+    "ssrd",
+    "sst",
+    "strd",
+    "t2m",
+    "t500",
+    "tcc",
+    "tp",
+    "u10",
+    "u10hpa",
+    "v10",
+    "wspd",
+    "z250",
+    "z500"
+   ]
+  },
+  {
+   "key": "monthly_all__cal",
+   "base": "monthly_all",
+   "cal": true,
+   "disc": "monthly",
+   "season": "all",
+   "lags": [
+    1,
+    2,
+    3,
+    6,
+    12
+   ],
+   "lagsRegion": [],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "month",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.0006931032035865036,
+     "gapScale": 0.0006368279274480016,
+     "gapP10": 0.0008908584713935852,
+     "gapP90": 0.025806796550750733,
+     "significant": 0.8640540108660913,
+     "distinct": null
+    },
+    "2": {
+     "u1Scale": 0.0004549936628809162,
+     "gapScale": 0.0005255821361845615,
+     "gapP10": 0.0004962690174579621,
+     "gapP90": 0.016853875294327744,
+     "significant": 0.4494029670727295,
+     "distinct": null
+    },
+    "3": {
+     "u1Scale": 0.000490952823676315,
+     "gapScale": 0.0004700780645305035,
+     "gapP10": 0.000467560812830925,
+     "gapP90": 0.015638120099902165,
+     "significant": 0.24716782650914387,
+     "distinct": null
+    },
+    "6": {
+     "u1Scale": 0.00052357578978819,
+     "gapScale": 0.00043740631902919097,
+     "gapP10": 0.0004272811114788055,
+     "gapP90": 0.013239170983433732,
+     "significant": 0.16773872266257212,
+     "distinct": null
+    },
+    "12": {
+     "u1Scale": 0.0004934316756678562,
+     "gapScale": 0.0005466712236988779,
+     "gapP10": 0.0003742342814803124,
+     "gapP90": 0.01251275669783354,
+     "significant": 0.12400084584478749,
+     "distinct": null
+    }
+   },
+   "regionLeader": {}
+  },
+  {
+   "key": "daily_freeze_up__cal",
+   "base": "daily_freeze_up",
+   "cal": true,
+   "disc": "daily",
+   "season": "freeze_up",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.0010799831035090428,
+     "gapScale": 0.0009369348194084915,
+     "gapP10": 0.0011030900292098523,
+     "gapP90": 0.03240894377231598,
+     "significant": 0.9777222569227566,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.00136337490642772,
+     "gapScale": 0.0013120872132918414,
+     "gapP10": 0.0010933935176581145,
+     "gapP90": 0.06741039752960205,
+     "significant": 0.7973579262213359,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.0015192702704784917,
+     "gapScale": 0.0013535873562681908,
+     "gapP10": 0.0013925394043326378,
+     "gapP90": 0.09982835799455647,
+     "significant": 0.7809190191634041,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.0013848751199011708,
+     "gapScale": 0.0010601855960546756,
+     "gapP10": 0.0011843018699437382,
+     "gapP90": 0.1149674713611605,
+     "significant": 0.7177449709338798,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.0014284154948066262,
+     "gapScale": 0.001456135862013873,
+     "gapP10": 0.0006122915772721171,
+     "gapP90": 0.039491689205169704,
+     "significant": 0.3730245460659045,
+     "distinct": null
+    }
+   },
+   "regionLeader": {}
+  },
+  {
+   "key": "daily_winter__cal",
+   "base": "daily_winter",
+   "cal": true,
+   "disc": "daily",
+   "season": "winter",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.0012220295036540312,
+     "gapScale": 0.0008732953492332907,
+     "gapP10": 0.002238968014717102,
+     "gapP90": 0.05091026127338412,
+     "significant": 0.9911851911210834,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.0012619192693747725,
+     "gapScale": 0.001245748529247209,
+     "gapP10": 0.0013527527451515197,
+     "gapP90": 0.14613394439220428,
+     "significant": 0.800229057591623,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.002354736421622482,
+     "gapScale": 0.0021205553821488925,
+     "gapP10": 0.001685212040320039,
+     "gapP90": 0.18046891689300545,
+     "significant": 0.7647010913829614,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.004228661107081993,
+     "gapScale": 0.0036776084525912416,
+     "gapP10": 0.0018923296593129635,
+     "gapP90": 0.18517645001411442,
+     "significant": 0.7459832904884319,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.006225871572307512,
+     "gapScale": 0.005365670896043964,
+     "gapP10": 0.001780368760228157,
+     "gapP90": 0.16103692650795007,
+     "significant": 0.7459026247245041,
+     "distinct": null
+    }
+   },
+   "regionLeader": {}
+  },
+  {
+   "key": "daily_melt_onset__cal",
+   "base": "daily_melt_onset",
+   "cal": true,
+   "disc": "daily",
+   "season": "melt_onset",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.001887496546203015,
+     "gapScale": 0.001954450560551064,
+     "gapP10": 0.0012883078306913376,
+     "gapP90": 0.04673127159476287,
+     "significant": 0.9678280718377191,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.0023331628126256605,
+     "gapScale": 0.0023331628126256605,
+     "gapP10": 0.0010673715267330408,
+     "gapP90": 0.0807797059416771,
+     "significant": 0.7036604361370716,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.003574680580812342,
+     "gapScale": 0.003574680580812342,
+     "gapP10": 0.000994925480335951,
+     "gapP90": 0.09183916151523593,
+     "significant": 0.5891456343792633,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.0024121850144629385,
+     "gapScale": 0.0022505587222529395,
+     "gapP10": 0.0008534739725291729,
+     "gapP90": 0.09818019419908534,
+     "significant": 0.49868149979398435,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.002251629502165551,
+     "gapScale": 0.0022294250189089306,
+     "gapP10": 0.0008029901422560215,
+     "gapP90": 0.11708843559026723,
+     "significant": 0.45528820621757427,
+     "distinct": null
+    }
+   },
+   "regionLeader": {}
+  },
+  {
+   "key": "daily_melt__cal",
+   "base": "daily_melt",
+   "cal": true,
+   "disc": "daily",
+   "season": "melt",
+   "lags": [
+    1,
+    7,
+    14,
+    30,
+    60
+   ],
+   "lagsRegion": [],
+   "pixel": true,
+   "pixelSignificance": true,
+   "lagUnit": "day",
+   "domainKind": "ocean",
+   "domainCells": 25115,
+   "lagMeta": {
+    "1": {
+     "u1Scale": 0.0061415882671580595,
+     "gapScale": 0.006113093974543553,
+     "gapP10": 0.0007988090510480106,
+     "gapP90": 0.031631150841712974,
+     "significant": 0.9780454265256769,
+     "distinct": null
+    },
+    "7": {
+     "u1Scale": 0.008278622346765855,
+     "gapScale": 0.008217933131199257,
+     "gapP10": 0.0005743786692619324,
+     "gapP90": 0.0901247099041939,
+     "significant": 0.7097943842582357,
+     "distinct": null
+    },
+    "14": {
+     "u1Scale": 0.008723953658459233,
+     "gapScale": 0.008600193846459481,
+     "gapP10": 0.0008128694258630276,
+     "gapP90": 0.17217431664466895,
+     "significant": 0.6512233656432811,
+     "distinct": null
+    },
+    "30": {
+     "u1Scale": 0.011758099350274777,
+     "gapScale": 0.011353492736816406,
+     "gapP10": 0.0011426914483308793,
+     "gapP90": 0.19089470505714418,
+     "significant": 0.6526698420656806,
+     "distinct": null
+    },
+    "60": {
+     "u1Scale": 0.011057331982780905,
+     "gapScale": 0.010978085386986827,
+     "gapP10": 0.0015410524792969227,
+     "gapP90": 0.13120996654033665,
+     "significant": 0.6354337824515282,
+     "distinct": null
+    }
+   },
+   "regionLeader": {}
+  }
+ ]
+}
